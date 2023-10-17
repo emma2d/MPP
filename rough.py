@@ -1,27 +1,19 @@
-# Write a program that prints a multiplication table for numbers up to 12.     
+def calculate_standard_deviation(data):
+    # Calculate the mean
+    mean = sum(data) / len(data)
+    
+    # Calculate the sum of squared differences from the mean
+    sum_squared_diff = sum((x - mean) ** 2 for x in data)
+    
+    # Calculate the variance
+    variance = sum_squared_diff / len(data)
+    
+    # Calculate the standard deviation (square root of the variance)
+    standard_deviation = variance ** 0.5
+    
+    return standard_deviation
 
-# Multiplication table (from 1 to 10) in Python
-
-def checkPrime(num):
-
-    #  0, 1 and negative numbers are not prime
-    if num < 2:
-        return 0
-    else:
-
-        # no need to run loop till num-1 as for any number x the numbers in
-        # the range(num/2 + 1, num) won't be divisible anyway
-        # Example 36 won't be divisible by anything b/w 19-35
-        x = num // 2
-        for j in range(2, x + 1):
-            if num % j == 0:
-                return 0
-
-    # the number would be prime if we reach here
-    return 1
-
-
-for i in range(1, 100 + 1):
-    if checkPrime(i):
-        print(i, end=" ")
-
+# Example usage
+data = [1, 2, 3, 4, 5]
+result = calculate_standard_deviation(data)
+print("Standard deviation:", result)
