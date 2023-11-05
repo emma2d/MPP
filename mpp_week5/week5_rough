@@ -1,0 +1,17 @@
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def __repr__(self):
+        return f"Person ('{self.name}', {self.age})"
+
+class Student(Person):
+    def __init__(self, name, age, college_course):
+        Person.__init__(self, name, age)
+        self.college_course = college_course
+    def __repr__(self):
+        return f"Student ({self.name}, {self.age}, {self.college_course})"
+
+p1 = Student("John", 36, "Computer Science")
+
+print(p1)
